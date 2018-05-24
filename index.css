@@ -1,0 +1,10 @@
+.dropzone {
+  padding: 6px;
+  border-style: dashed;
+  font-size: 12pt;
+  width: 50%;
+}
+
+body {
+  margin: 0;
+}
