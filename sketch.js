@@ -10,14 +10,14 @@ var diff = .06
 let bool = true;
 let p;
 var backgroundCol = 245;
-let songs = [ 
+let songs = [
   {
     loc: 'Feel.mp3',
     name: 'Feel it Still',
     artist: 'Portugal. The Man'
   },
   {
-    loc:'Paris.mp3',
+    loc: 'Paris.mp3',
     name: 'Paris',
     artist: 'The Chainsmokers'
   },
@@ -46,7 +46,7 @@ let songs = [
     name: 'Feel Good Inc.',
     artist: 'Gorillaz'
   },
-  ];
+];
 let currSong = 0;
 let currSongName = 'Feel it Still';
 
@@ -106,17 +106,17 @@ function setup() {
   let next = createButton("Next Song");
   next.mousePressed(() => {
     newSong(songs[++currSong % songs.length])
-    }
+  }
   );
 
   sel = createSelect();
-  for(var i=0; i<songs.length; i++) {
-    sel.option(`${i+1}. ${songs[i].name} - ${songs[i].artist}`);
+  for (var i = 0; i < songs.length; i++) {
+    sel.option(`${i + 1}. ${songs[i].name} - ${songs[i].artist}`);
   }
 
   sel.changed(() => {
     newSongIdx = (+sel.value()[0]) - 1;
-    if(currSong !== newSongIdx) {
+    if (currSong !== newSongIdx) {
       currSong = newSongIdx;
       newSong(songs[currSong]);
     }
@@ -142,7 +142,7 @@ function draw() {
       for (var i = 0; i < 7; i++) {
         createSystem(0, width, 0, height, true);
       }
-      for(var i=0; i<5; i++) {
+      for (var i = 0; i < 5; i++) {
         createSystem(0, width, 0, height, false);
       }
     }
@@ -233,8 +233,8 @@ function handleDrop(mp3) {
   })
 }
 
-function newSong (newSongObj) {
-  if(newSongObj.name !== currSongName) {
+function newSong(newSongObj) {
+  if (newSongObj.name !== currSongName) {
     currSongName = newSong.name;
     p.html(newSongObj.name + '-' + newSongObj.artist);
 
